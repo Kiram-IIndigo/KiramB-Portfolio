@@ -299,6 +299,51 @@ strong { font-weight: 600; }
   text-align: center;
 }
 
+/* ---- avatar ---- */
+.hero-avatar {
+  width: 108px;
+  height: 108px;
+  margin: 0 auto 28px;
+  position: relative;
+  border-radius: 50%;
+}
+
+.hero-avatar::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: var(--grad);
+  z-index: 0;
+  animation: spinGrad 6s linear infinite;
+}
+
+@keyframes spinGrad {
+  to { transform: rotate(360deg); }
+}
+
+.hero-avatar::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(98,140,204,.2) 0%, transparent 70%);
+  z-index: -1;
+}
+
+.hero-avatar img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 3px solid var(--bg);
+  display: block;
+}
+
+/* ---- greeting ---- */
 .hero-greeting {
   display: inline-flex;
   align-items: center;
@@ -1093,9 +1138,10 @@ strong { font-weight: 600; }
 }
 
 .delay-1 { animation-delay: .1s; }
-.delay-2 { animation-delay: .2s; }
-.delay-3 { animation-delay: .32s; }
-.delay-4 { animation-delay: .44s; }
+.delay-2 { animation-delay: .22s; }
+.delay-3 { animation-delay: .34s; }
+.delay-4 { animation-delay: .46s; }
+.delay-5 { animation-delay: .58s; }
 
 @keyframes fadeUp {
   to { opacity: 1; transform: translateY(0); }
